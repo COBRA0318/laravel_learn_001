@@ -15,6 +15,14 @@
 </head>
 <body>
     <div id="app">
+        <span>
+{{ $greetingMessage }}
+            @if (Auth::guest())
+                ゲストさん
+            @else
+                {{ Auth::user()->name }}さん
+            @endif
+</span>
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">

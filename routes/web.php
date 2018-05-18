@@ -18,8 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::get('hello', 'HelloController@index'); // ->middleware('auth');
+//2018/05/14 ミドルウェアを設定　
+Route::get('hello', 'HelloController@index')
+    ->middleware(HelloMiddleware::class);
 Route::post('hello', 'HelloController@post');
 
 Route::get('hello/add', 'HelloController@add');
