@@ -1,0 +1,64 @@
+PHPUnit 5.7.20 by Sebastian Bergmann and contributors.
+
+EEEEEE                                                              6 / 6 (100%)
+
+Time: 1.29 seconds, Memory: 4.00MB
+
+There were 6 errors:
+
+1) GreetingMiddlewareTest::testHandle with data set #0 ('2015-03-27 05:00:00', 'おはよう')
+ReflectionException: Class view does not exist
+
+C:\xampp\htdocs\laravelapp\vendor\laravel\framework\src\Illuminate\Container\Container.php:729
+C:\xampp\htdocs\laravelapp\vendor\laravel\framework\src\Illuminate\Container\Container.php:608
+C:\xampp\htdocs\laravelapp\vendor\laravel\framework\src\Illuminate\Container\Container.php:575
+C:\xampp\htdocs\laravelapp\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php:106
+C:\xampp\htdocs\laravelapp\tests\Http\Middleware\Greeting\GreetingMiddlewareTest.php:13
+
+2) GreetingMiddlewareTest::testHandle with data set #1 ('2015-03-27 09:59:59', 'おはよう')
+ReflectionException: Class view does not exist
+
+C:\xampp\htdocs\laravelapp\vendor\laravel\framework\src\Illuminate\Container\Container.php:729
+C:\xampp\htdocs\laravelapp\vendor\laravel\framework\src\Illuminate\Container\Container.php:608
+C:\xampp\htdocs\laravelapp\vendor\laravel\framework\src\Illuminate\Container\Container.php:575
+C:\xampp\htdocs\laravelapp\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php:106
+C:\xampp\htdocs\laravelapp\tests\Http\Middleware\Greeting\GreetingMiddlewareTest.php:13
+
+3) GreetingMiddlewareTest::testHandle with data set #2 ('2015-03-27 10:00:00', 'こんにちは')
+ReflectionException: Class view does not exist
+
+C:\xampp\htdocs\laravelapp\vendor\laravel\framework\src\Illuminate\Container\Container.php:729
+C:\xampp\htdocs\laravelapp\vendor\laravel\framework\src\Illuminate\Container\Container.php:608
+C:\xampp\htdocs\laravelapp\vendor\laravel\framework\src\Illuminate\Container\Container.php:575
+C:\xampp\htdocs\laravelapp\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php:106
+C:\xampp\htdocs\laravelapp\tests\Http\Middleware\Greeting\GreetingMiddlewareTest.php:13
+
+4) GreetingMiddlewareTest::testHandle with data set #3 ('2015-03-27 17:59:59', 'こんにちは')
+ReflectionException: Class view does not exist
+
+C:\xampp\htdocs\laravelapp\vendor\laravel\framework\src\Illuminate\Container\Container.php:729
+C:\xampp\htdocs\laravelapp\vendor\laravel\framework\src\Illuminate\Container\Container.php:608
+C:\xampp\htdocs\laravelapp\vendor\laravel\framework\src\Illuminate\Container\Container.php:575
+C:\xampp\htdocs\laravelapp\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php:106
+C:\xampp\htdocs\laravelapp\tests\Http\Middleware\Greeting\GreetingMiddlewareTest.php:13
+
+5) GreetingMiddlewareTest::testHandle with data set #4 ('2015-03-27 18:00:00', 'こんばんは')
+ReflectionException: Class view does not exist
+
+C:\xampp\htdocs\laravelapp\vendor\laravel\framework\src\Illuminate\Container\Container.php:729
+C:\xampp\htdocs\laravelapp\vendor\laravel\framework\src\Illuminate\Container\Container.php:608
+C:\xampp\htdocs\laravelapp\vendor\laravel\framework\src\Illuminate\Container\Container.php:575
+C:\xampp\htdocs\laravelapp\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php:106
+C:\xampp\htdocs\laravelapp\tests\Http\Middleware\Greeting\GreetingMiddlewareTest.php:13
+
+6) GreetingMiddlewareTest::testHandle with data set #5 ('2015-03-28 04:59:59', 'こんばんは')
+ReflectionException: Class view does not exist
+
+C:\xampp\htdocs\laravelapp\vendor\laravel\framework\src\Illuminate\Container\Container.php:729
+C:\xampp\htdocs\laravelapp\vendor\laravel\framework\src\Illuminate\Container\Container.php:608
+C:\xampp\htdocs\laravelapp\vendor\laravel\framework\src\Illuminate\Container\Container.php:575
+C:\xampp\htdocs\laravelapp\vendor\laravel\framework\src\Illuminate\Foundation\helpers.php:106
+C:\xampp\htdocs\laravelapp\tests\Http\Middleware\Greeting\GreetingMiddlewareTest.php:13
+
+ERRORS!
+Tests: 6, Assertions: 0, Errors: 6.

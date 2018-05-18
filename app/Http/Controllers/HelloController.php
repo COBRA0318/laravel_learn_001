@@ -52,8 +52,17 @@ class HelloController extends Controller
 
     public function post(Request $request)
     {
-        $items = DB::select('select * from people');
-        return view('hello.index', ['items' => $items]);
+  //      $items = DB::select('select * from people');
+  // return view('hello.index', ['items' => $items]);
+
+        $validate_rules = [
+            'name' => 'required',
+            'mail' => 'email',
+            'age' => 'numeric|between0,150',
+        ];
+
+        $this->validate($request,$validate_rules);
+        return view('hello.index', ['msg' => '正しく入力されました！']);
     }
 
     public function show(Request $request)

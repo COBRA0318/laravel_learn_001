@@ -70,3 +70,7 @@ Route::post('hello/session', 'HelloController@ses_put');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Route::group(['middleware' => ['web']], function () {
+//    Route::post('/user/create', 'UserController@postCreate');
+//});

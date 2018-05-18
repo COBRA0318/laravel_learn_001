@@ -21,30 +21,30 @@
     <p>※ログインしていません。（<a href="/login">ログイン</a>｜
         <a href="/register">登録</a>）</p>
     @endif -->
-
-    {{--   <table>
-       <tr>
-           <th><a href="/hello?sort=name">name</a></th>
-           <th><a href="/hello?sort=mail">mail</a></th>
-           <th><a href="/hello?sort=age">age</a></th>
-       </tr>
+    <table>
+    <tr>
+        <th><a href="/hello?sort=name">name</a></th>
+        <th><a href="/hello?sort=mail">mail</a></th>
+        <th><a href="/hello?sort=age">age</a></th>
+    </tr>
+<!--    @foreach ($items as $item)
+        <tr>
+            <td>{{$item->name}}</td>
+            <td>{{$item->mail}}</td>
+           <td>{{$item->age}}</td>
+        </tr>
+    @endforeach
+    {{ $items->appends(['sort' => $sort])->links() }}
+-->
         @foreach ($data as $item)
             <tr>
-                <td>{{$item['name']}}</td>
-                <td>{{$item['mail']}}</td>
+                <td>{{$item->name}}</td>
+                <td>{{$item->mail}}</td>
             </tr>
         @endforeach
-       </table>  --}}
-    <p>{{$msg}}</p>
-    <table>
-        <form action="/hello" method="post">
-            <tr><th>name: </th><td><input type="text" name="name"></td></tr>
-            <tr><th>mail: </th><td><input type="text" name="mail"></td></tr>
-            <tr><th>age:  </th><td><input type="text" name="age"></td></tr>
-        </form>
     </table>
-   @endsection
+@endsection
 
-   @section('footer')
-   copyright 2017 tuyano.
-   @endsection
+@section('footer')
+copyright 2017 tuyano.
+@endsection
