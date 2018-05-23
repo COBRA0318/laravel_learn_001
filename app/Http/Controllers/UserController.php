@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function index()
+    {
+        return view('test');
+    }
+
     public function postCreate(CreateUserRequest $req) {
         /**
          * 拡張クラスに書いたルールでリクエストが自動的に検証される

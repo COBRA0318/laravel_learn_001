@@ -24,6 +24,7 @@ class HelloController extends Controller
     {
         $param = ['message' => 'ログインして下さい。'];
         return view('hello.auth', $param);
+
     }
 
     public function postAuth(Request $request)
@@ -47,7 +48,11 @@ class HelloController extends Controller
             ->simplePaginate(10);
         $param = ['items' => $items, 'sort' => $sort]; // , 'user' => $user];
     //        return view('hello.index', $param);
-        return view('hello.index', ['data' => $request->data]);
+        //一覧表示用
+    //    return view('hello.index', ['data' => $request->data]);
+
+        return view('hello.index', ['msg'=>'フォームを入力']);
+
     }
 
     public function post(Request $request)

@@ -74,3 +74,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 //Route::group(['middleware' => ['web']], function () {
 //    Route::post('/user/create', 'UserController@postCreate');
 //});
+
+Route::get('/users', 'UserController@index');
+
+Route::get('/form', function () {
+    return view('pages.form');
+});
+
+Route::post('/form/result', 'FormController@formResult');
