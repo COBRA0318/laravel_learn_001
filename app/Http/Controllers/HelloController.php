@@ -63,7 +63,7 @@ class HelloController extends Controller
         $validate_rules = [
             'name' => 'required',
             'mail' => 'email',
-            'age' => 'numeric|between0,150',
+            'age' => 'numeric|between:0,150',
         ];
 
         $this->validate($request,$validate_rules);
