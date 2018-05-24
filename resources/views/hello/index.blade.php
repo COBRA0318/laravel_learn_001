@@ -21,6 +21,10 @@
     <p>※ログインしていません。（<a href="/login">ログイン</a>｜
         <a href="/register">登録</a>）</p>
     @endif -->
+    <p>ここが本文のコンテンツです。</p>
+    <p>Controller value<br>'message' = {{$message}}</p>
+    <p>ViewComposer value<br>'view_message' = {{$view_message}}</p>
+
     @if(count($errors) > 0)
     <p>入力に問題があります。再入力して下さい。</p>
     {{--<div>--}}
@@ -44,7 +48,7 @@
             </tr>
         @endforeach
        </table>  --}}
-    <p>{{$msg}}</p>
+    {{--<p>{{$msg}}</p>--}}
     <table>
         <form action="/hello" method="post">
             @if ($errors->has('name'))

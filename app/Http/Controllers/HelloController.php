@@ -51,8 +51,8 @@ class HelloController extends Controller
         //一覧表示用
     //    return view('hello.index', ['data' => $request->data]);
 
-        return view('hello.index', ['msg'=>'フォームを入力']);
-
+//        return view('hello.index', ['msg'=>'フォームを入力']);
+        return view('hello.index', ['message'=>'Hello!']);
     }
 
     public function post(Request $request)

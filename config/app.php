@@ -179,7 +179,7 @@ return [
 
         // add by users.
         // App\Providers\HelloServiceProvider::Class,
-        
+        App\Providers\HelloServiceProvider::class,
     ],
 
     /*
