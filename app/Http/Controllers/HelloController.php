@@ -42,17 +42,27 @@ class HelloController extends Controller
 
     public function index(Request $request)
     {
-        // $user = Auth::user();
-        $sort = $request->sort;
-        $items = Person::orderBy($sort, 'asc')
-            ->simplePaginate(10);
-        $param = ['items' => $items, 'sort' => $sort]; // , 'user' => $user];
-    //        return view('hello.index', $param);
-        //一覧表示用
-    //    return view('hello.index', ['data' => $request->data]);
-
-//        return view('hello.index', ['msg'=>'フォームを入力']);
-        return view('hello.index', ['message'=>'Hello!']);
+//        // $user = Auth::user();
+//        $sort = $request->sort;
+//        $items = Person::orderBy($sort, 'asc')
+//            ->simplePaginate(10);
+//        $param = ['items' => $items, 'sort' => $sort]; // , 'user' => $user];
+//    //        return view('hello.index', $param);
+//        //一覧表示用
+//    //    return view('hello.index', ['data' => $request->data]);
+//
+////        return view('hello.index', ['msg'=>'フォームを入力']);
+//        return view('hello.index', ['message'=>'Hello!']);
+        $validator = Validator::make($request->query(),[
+            'id' => 'required',
+            'pass' => 'required'
+        ]);
+        if($validator->fails()) {
+            $msg = 'クエリーに問題があります。';
+        }else{
+            $msg = 'ID/PASSを受け付けました。フォームを入力下さい。';
+        }
+        return view('hello.index', ['message'=>$msg,]);
     }
 
 //バリデータHelloRequest作成のため、修正
