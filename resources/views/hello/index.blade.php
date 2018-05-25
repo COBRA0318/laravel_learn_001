@@ -22,7 +22,7 @@
         <a href="/register">登録</a>）</p>
     @endif -->
     <p>ここが本文のコンテンツです。</p>
-    <p>Controller value<br>'message' = {{$message}}</p>
+    {{--<p>Controller value<br>'message' = {{$message}}</p>--}}
     <p>ViewComposer value<br>'view_message' = {{$view_message}}</p>
 
     @if(count($errors) > 0)

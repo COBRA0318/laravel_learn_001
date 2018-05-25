@@ -15,6 +15,14 @@ class HelloServiceProvider extends ServiceProvider
                 $view->with('view_message','composer message!');
             }
         );
+
+        $validator = $this->app['validator'];
+        $validator->resolver(function($translator,$data,
+            $rules,$messages){
+            return new HelloValidator($translator,$data,
+                $rules,$messages);
+        });
+
 		/*
         Validator::extend('hello', function($attribute, $value, 
                 $parameters, $validator) {

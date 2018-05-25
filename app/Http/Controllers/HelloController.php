@@ -53,69 +53,70 @@ class HelloController extends Controller
 //
 ////        return view('hello.index', ['msg'=>'フォームを入力']);
 //        return view('hello.index', ['message'=>'Hello!']);
-        $validator = Validator::make($request->query(),[
-            'id' => 'required',
-            'pass' => 'required'
-        ]);
-        if($validator->fails()) {
-            $msg = 'クエリーに問題があります。';
-        }else{
-            $msg = 'ID/PASSを受け付けました。フォームを入力下さい。';
-        }
-        return view('hello.index', ['message'=>$msg,]);
+//HalloValidatorの、HelloServiceProviderへの追加により、コメントアウト
+//        $validator = Validator::make($request->query(),[
+//            'id' => 'required',
+//            'pass' => 'required'
+//        ]);
+//        if($validator->fails()) {
+//            $msg = 'クエリーに問題があります。';
+//        }else{
+//            $msg = 'ID/PASSを受け付けました。フォームを入力下さい。';
+//        }
+        return view('hello.index', ['msg' => 'フォームを入力下さい。',]);
     }
 
 //バリデータHelloRequest作成のため、修正
 //    public function post(Request $request)
-//    public function post(HelloRequest $request)
-    public function post(Request $request)
+    public function post(HelloRequest $request)
     {
-  //      $items = DB::select('select * from people');
-  // return view('hello.index', ['items' => $items]);
-
-//バリデータHelloRequest作成のため、コメントアウト
-//        $validate_rules = [
+//HalloValidatorの、HelloServiceProviderへの追加により、コメントアウト
+//  //      $items = DB::select('select * from people');
+//  // return view('hello.index', ['items' => $items]);
+//
+////バリデータHelloRequest作成のため、コメントアウト
+////        $validate_rules = [
+////            'name' => 'required',
+////            'mail' => 'email',
+////            'age' => 'numeric|between:0,150',
+////        ];
+//        $rules = [
 //            'name' => 'required',
 //            'mail' => 'email',
-//            'age' => 'numeric|between:0,150',
+//            'age' => 'numeric',
+////            'age' => 'numeric|between:0,150',
 //        ];
-        $rules = [
-            'name' => 'required',
-            'mail' => 'email',
-            'age' => 'numeric',
-//            'age' => 'numeric|between:0,150',
-        ];
-//        $validator = Validator::make($request->all(),[
-//             'name' => 'required',
-//             'mail' => 'email',
-//             'age'  => 'numeric|between:0,150'
-//         ]);
-        $messages = [
-            'name.required' => '名前は必ず入力して下さい。',
-            'mail.email' => 'メールアドレスが必要です',
-            'age.numeric' => '年齢は整数で記入下さい。',
-            'age.min' => '年齢をゼロ以上で記入下さい',
-            'age.max' => '年齢は200歳以下で記入下さい',
-//            'age.between' => '年齢は0～150の間で、入力下さいね',
-
-        ];
-        $validator = Validator::make($request->all(),
-            $rules,
-            $messages);
-
-        $validator->sometimes('age','min:0',function($input){
-            return !is_int($input->age);
-        });
-
-        $validator->sometimes('age','max:200',function($input){
-            return !is_int($input->age);
-        });
-
-        if($validator->fails()){
-            return redirect('/hello')
-                ->withErrors($validator)
-                ->withInput();
-        }
+////        $validator = Validator::make($request->all(),[
+////             'name' => 'required',
+////             'mail' => 'email',
+////             'age'  => 'numeric|between:0,150'
+////         ]);
+//        $messages = [
+//            'name.required' => '名前は必ず入力して下さい。',
+//            'mail.email' => 'メールアドレスが必要です',
+//            'age.numeric' => '年齢は整数で記入下さい。',
+//            'age.min' => '年齢をゼロ以上で記入下さい',
+//            'age.max' => '年齢は200歳以下で記入下さい',
+////            'age.between' => '年齢は0～150の間で、入力下さいね',
+//
+//        ];
+//        $validator = Validator::make($request->all(),
+//            $rules,
+//            $messages);
+//
+//        $validator->sometimes('age','min:0',function($input){
+//            return !is_int($input->age);
+//        });
+//
+//        $validator->sometimes('age','max:200',function($input){
+//            return !is_int($input->age);
+//        });
+//
+//        if($validator->fails()){
+//            return redirect('/hello')
+//                ->withErrors($validator)
+//                ->withInput();
+//        }
 //
         return view('hello.index', ['msg' => '正しく入力されました！']);
     }
