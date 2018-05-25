@@ -55,18 +55,20 @@ class HelloController extends Controller
         return view('hello.index', ['message'=>'Hello!']);
     }
 
-    public function post(Request $request)
+//バリデータHelloRequest作成のため、修正
+ //   public function post(Request $request)
+    public function post(HelloRequest $request)
     {
   //      $items = DB::select('select * from people');
   // return view('hello.index', ['items' => $items]);
 
-        $validate_rules = [
-            'name' => 'required',
-            'mail' => 'email',
-            'age' => 'numeric|between:0,150',
-        ];
-
-        $this->validate($request,$validate_rules);
+//バリデータHelloRequest作成のため、コメントアウト
+//        $validate_rules = [
+//            'name' => 'required',
+//            'mail' => 'email',
+//            'age' => 'numeric|between:0,150',
+//        ];
+//
         return view('hello.index', ['msg' => '正しく入力されました！']);
     }
 
